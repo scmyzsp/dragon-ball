@@ -1,37 +1,98 @@
-## Welcome to GitHub Pages
+Python基础入门：从变量到异常处理
 
-You can use the [editor on GitHub](https://github.com/scmyzsp/dragon-ball/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+语法基础：注释在程序中对某些代码进行标注说明，这就是注释的作用，能够大大增强程序的可读性。python 常用单行注释是
+，常用多行注释是三对单引号 ''' '''
+# 这是一个单行注释
+print("七月你好,我是八月.") 此行代码不执行显示.
+快捷键: ctrl + / 快速设置注释 和 快速取消注释
+'''
+这是一个多行注释
+该范围内的代码不会执行显示
+'''
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+语法基础：数据类型3. 语法基础：关键字和标识符关键字python 一些具有特殊功能的标识符，这就是所谓的关键字。关键字，是 python 已经使用的了，所以不允许开发者自己定义和关键字相同的名字的标识符那么 python 中关键字都有哪些呢？['False', 'None', 'True', 'and', 'as', 'assert', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']那么咱们如何去查询 python 中有哪些关键字呢？
+在python中若想查询python中有哪些关键字可以先导入keyword模块
+import keyword #导入关键字模块
+print(keyword.kwlist) #查询所有关键字实际操作温馨提示:咱们在起变量名或者文件名时不能使用这些关键字名字哟,否则会报错.抛出异常~请大家注意哟。标识符祖国的花朵(开发人员)在程序中自定义的一些符号和名称。标示符是咱们自己定义的,如变量名、函数名、类名等。标识符规则定义这些标识符也有一定的规则：标识符由字母下划线和数字组成,但是不能以数字开头,可以使用下划线或字母开头，注意在 python 中，标识符是严格区分大小写的哟。 变量 Andy 不等于 变量 andy 这是两个变量。标识符命名规则命名规则,可以简单的理解为,咱们在起名字的时候是需要遵守相关规则的.主要是为了让别人一看就明白是什么意思,做什么用的.可以提高代码可读性。比如：名字 就定义为 name , 定义学生用 student。驼峰命名法同时呢,在需要多个单词进行组合时,咱们使用驼峰命名法：小驼峰式命名法： 第一个单词以小写字母开始；第二个单词的首字母大写，例如：myName、aDog大驼峰式命名法： 每一个单字的首字母都采用大写字母，例如：FirstName、LastName。不过在程序员中还有一种命名法比较流行，就是用下划线“_”来连接所有的单词，比如send_buf名字和对象之间关系我们可以用 = 等号，建立立定义的变量名字和对象之间的引用关系,也可以用使用 del 来解除这种引用关系。# 举个例子
 
-### Markdown
+name = '天下第一帅' # 我将 天下第一帅 这个字符串赋值给了 name 这个变量名,可以理解为,下次我通过 name 名字可以联系到 天下第一帅 这个人.实际操作# del 解除引用关系
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+age = 17 # 永远17岁
+del age # del 是 delete 的缩写,此行代码表示删除 age 和 17 之间的引用关系
 
-```markdown
-Syntax highlighted code block
+print(age) # 因为已经删除引用关系,所以访问不到 17 这个数据,则抛出异常实际操作名字空间当我们在定义了一些变量名，函数名，类名之后，会有一个空间来收纳这些名字和它们所对应的数据类型和数据内容。# 举个栗子
 
-# Header 1
-## Header 2
-### Header 3
+height = '190CM' # 小编的理想身高.但是现实很残酷.
 
-- Bulleted
-- List
+def func1():
+pass
 
-1. Numbered
-2. List
+class Fun():
+pass实际操作使用 %whos 查看名字空间，我们也可以使用 %reset 来清空这个空间，清空之后，我们就需要重新执行一次定义的过程，才能重新存储在名字空间内。实际操作4. 语法基础：输出普通的输出python中的输出用 print() 在括号中加上字符串，就可以向屏幕上输出指定的文字。比如输出 '李铁柱'，用代码实现如下：name = '李铁柱'
 
-**Bold** and _Italic_ and `Code` text
+print(name)运行结果print()也可以打印整数，或者计算结果# 举个例子
+print(300)
+print(100 + 200)实际操作因此，我们可以把计算100 + 200 的结果打印得更漂亮一点：print('100 + 200 = ', 100 + 200)实际操作注意，对于100 + 200，Python 解释器自动计算出结果 300，但是，'100 + 200 =' 是字符串而非数学公式，Python 把它视为字符串，直接进行打印输出。5. 语法基础：格式化输出格式化操作的目的，比如说有下列代码：print('大家好，我叫 李铁柱，我今年 24 岁')
 
-[Link](url) and ![Image](src)
-```
+print('大家好，我叫 候德柱，我今年 25 岁')
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+print('大家好，我叫 候不柱，我今年 26 岁')大家仔细观察一下，能够看到，我在 print 输出自我介绍的时候，用了很多的相同字体，就只有一些不同的字段，那么咱们能否简化一下程序呢？age = 24
+print("我今年%d岁" % age)
 
-### Jekyll Themes
+age += 25
+print("我今年%d岁" % age)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/scmyzsp/dragon-ball/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+age += 26
+print("我今年%d岁" % age)实际操作在程序中，看到了 % 这样的操作符，这就是 Python 中格式化输出。age = 18
+name = "小岳岳"
 
-### Support or Contact
+print("我的姓名是%s, 年龄是%d" % (name, age))运行结果在这里咱们一次使用了两个格式化符号，分别是：%s 和 %d。%s：表示格式化输出字符串%d：表示格式化输出十进制整数除了这两个格式化输出字符还有很多，往下看。常用的格式化符号6. 语法基础：输入现在，你已经可以用 print() 输出你想要的结果了。但是，如果要让用户从电脑输入一些字符怎么办？Python 提供了一个 input()，可以让用户输入字符串，并存放到一个变量里。比如输入用户的名字：name = input() # input()当你输入name = input()并按下回车后，Python交互式命令行就在等待你的输入了。这时，你可以输入任意字符，然后按回车后完成输入。输入完成后，不会有任何提示，Python 交互式命令行又回到就绪状态了。那我们刚才输入的内容到哪去了？答案是存放到 name 变量里了。可以直接输入 name 查看变量内容：7. 语法基础：运算符标准操作符python 同大多数语言一样，也有自己的操作符，分别用来应对不同的工作内容。今天要讲的是 Python 中最常用的几种标准操作符：算术运算符、赋值运算符、比较运算符、逻辑运算符。算数运算符注意：混合运算时，优先级顺序为： ** 高于 * / % // 高于 + - ，为了避免歧义，建议使用 () 来处理运算符优先级。并且，不同类型的数字在进行混合运算时，整数将会转换成浮点数进行运算。实际操作a = 10
+b = 20
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+print(a+b)
+print(a-b)
+print(a*b)
+print(a/b)赋值运算符实际操作a = 10 # 单个赋值
+b = 20
+c,d,e = 30,40,50 # 多个赋值 c = 30 , d = 40 , e = 50
+
+print(a,b,c,d,e)复合赋值运算符实际操作c = 40
+a = 20
+
+print(c += a) # 直接 print() 是无法输出结果的哟
+c += a
+print(c)
+c -= a
+print(c)
+c *= a
+print(c)
+c /= a
+print(c)
+c %= a
+print(c)
+
+（8）语法基础：常用的数据类型转换数据类型转换有时候，我们需要对数据内置的类型进行转换，数据类型的转换，你只需要将数据类型作为函数名即可。以下几个内置的函数可以执行数据类型之间的转换。这些函数返回一个新的对象，表示转换的值。类型转换# 给小伙伴们举几个例子
+
+int(): 将数据转换为 int 类型
+str1 = "10"
+num1 = int(str1)
+print(int)
+
+int() 处理浮点数，只留下整数部分，舍弃小数部分（并不是四舍五入操作）
+num2 = int(3.74)
+print(num2)
+
+float() 将数据转化为浮点数
+str2 = "3.14"
+f1 = float(str2)
+print(type(f1))
+
+str() : 转换为 字符串类型
+num1 = 10
+f1 = 3.14
+
+print(type(str(num1)))
+
+eval(): 将字符串形式的数据，转换为原本的类型
+str1 = "3.14"
+print(type(eval(str1)))操作结果
